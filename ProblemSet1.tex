@@ -1,0 +1,139 @@
+\documentclass[11 pt]{article}
+\title{Problem Set 1}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{proposition}{Proposition}
+
+\newcommand{\newpar}{\vspace{.15in}\noindent}
+
+\begin{document}
+
+\noindent Jake Irons, MTH 408-01, Problem Set 1, Problem 1
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+Let $x, y, a, b \in \mathbb{R}$. Suppose $\mid x-a\mid<\frac{\epsilon}{2(\mid b\mid+1)}, \mid x-a\mid<1$, and  $\mid y-b\mid<\frac{\epsilon}{2(\mid a\mid+1)}$ for some $\epsilon>0$. Prove that $\mid xy-ab\mid<\epsilon$.
+\end{proposition}
+\begin{proof}
+We will assume $x, y, a, b \in \mathbb{R}$, $\mid x-a\mid<\frac{\epsilon}{2(\mid b\mid+1)}, \mid x-a\mid<1$, and  $\mid y-b\mid<\frac{\epsilon}{2(\mid a\mid+1)}$ for some $\epsilon>0$ and show this means that $\mid xy-ab\mid<\epsilon$.
+
+
+\newpar
+If we are to add and subtract $xb$ within $\mid xy-ab\mid$, the result is equal to $\mid xy-xb+xb+ab\mid$. Hence, when we factor $x$ out of $xy-ab$ and $b$ out of $xb+ab$ we find that $\mid xy-xb+xb+ab\mid$ is equal to $\mid x(y-b)+b(x-a)\mid$. Using the Triangle Inequality and property 1 of Theorem R.2.1, we know $\mid x(y-b)+b(x-a)\mid\le \mid x\mid\mid y-b\mid+\mid b\mid\mid x-a\mid$. Since $\mid x-a\mid<\frac{\epsilon}{2(\mid b\mid+1)}$ and $\mid y-b\mid<\frac{\epsilon}{2(\mid a\mid+1)}$, if we are to multiply the first inequality by $\mid b \mid$ on both sides and the second inequality by $\mid x \mid$ on both sides, we get $\mid x-a\mid\mid b\mid\le\frac{\epsilon\mid b\mid}{2(\mid b\mid+1)}$ and $\mid y-b\mid\mid x\mid\le\frac{\epsilon\mid x\mid}{2(\mid a\mid+1)}$. Both sides of the inequalities can only be equal is when $\mid b\mid=0$ and $\mid x\mid=0$, as this would cause both sides of the inequality to equal zero. Then, it must hold true that $\mid x\mid\mid y-b\mid+\mid b\mid\mid x-a\mid\le \frac{\epsilon\cdot\mid x\mid}{2(\mid a\mid+1)}+\frac{\epsilon\cdot\mid b\mid}{2(\mid b\mid+1)}$. The reason for this is that the sum of two greater or equal to quantities will be greater than or equal to the sum of two lesser or equal to quantities.  
+
+\newpar
+Since $\frac{\mid b \mid}{\mid b\mid+1}<1$, we find that $\frac{\epsilon\cdot\mid b\mid}{2(\mid b\mid+1)}<\frac{\epsilon}{2}$. This is because $\epsilon>0$, and thus $\frac{\epsilon}{2}>0$, and multiplying a quantity that is greater than zero by a quantity less than one will cause the quantity to be negative or a postive number that is less than what it was before. Property 6 of Theorem R.2.1 tells us that $\mid\mid x\mid-\mid a\mid\mid\le \mid x-a\mid$. Since, $\mid x-a\mid<1$, we know $\mid\mid x\mid-\mid a\mid\mid<1$. Thus, $-1<\mid x\mid-\mid a\mid<1$. It then follows that $\mid x\mid<\mid a\mid+1$, and therefore, $\frac{\mid x\mid}{\mid a\mid+1}<1$. This shows that $\frac{\epsilon\cdot\mid x\mid}{2(\mid a\mid+1)}<\frac{\epsilon}{2}$. The reasoning for this is similar to above, as $\epsilon>0$, and thus $\frac{\epsilon}{2}>0$, and multiplying a quantity that is greater than zero by a quantity less than one will cause the quantity to be negative or a postive number that is less than what it was before.
+
+
+
+\newpar
+ Now that we have shown $\frac{\epsilon\cdot\mid x\mid}{2(\mid a\mid+1)}<\frac{\epsilon}{2}$ and $\frac{\epsilon\cdot\mid b\mid}{2(\mid b\mid+1)}<\frac{\epsilon}{2}$, using the fact that the sum of two greater 
+quantities is greater than the sum of two lesser quantities, $\frac{\epsilon\cdot\mid x\mid}{2(\mid a\mid+1)}+\frac{\epsilon\cdot\mid b\mid}{2(\mid b\mid+1)}<\frac{\epsilon}{2}+\frac{\epsilon}{2}$. Finally we know that $\frac{\epsilon}{2}+\frac{\epsilon}{2}$ is equal to $\epsilon$, and therefore, we can conclude that $\mid xy-ab\mid<\epsilon$.
+
+
+\newpar
+We have proven that when $x, y, a, b \in \mathbb{R}$, $\mid xy-ab\mid<\epsilon$, completing the proof.  
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 1, Problem 2
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+Let $x, y \in \mathbb{R}$. If $x$ and $y$ are not both zero, then necessarily $x^2+xy+y^2>0$.
+\end{proposition}
+\begin{proof}
+We will assume $x$ and $y$ are both real numbers that are not both zero and show that $x^2+xy+y^2>0$. Since $\frac{2xy}{2}=xy$, it holds true that $x^2+xy+y^2=x^2+\frac{2xy}{2}+y^2$. Adding and subtracting $\frac{y^2}{4}$ will have no affect on the value of $x^2+\frac{2xy}{2}+y^2$, and thus, $x^2+\frac{2xy}{2}+y^2=x^2+\frac{2xy}{2}+\frac{y^2}{4}-\frac{y^2}{4}+y^2$. Combining $-\frac{y^2}{4}+y^2$ results in $\frac{3y^2}{4}$ and factoring $x^2+\frac{2xy}{2}+\frac{y^2}{4}$ gives $(x+\frac{y^2}{2})^2$. Therefore, we conclude $x^2+\frac{2xy}{2}+\frac{y^2}{4}-\frac{y^2}{4}+y^2=(x+\frac{y^2}{2})^2+\frac{3y^2}{4}$. Since $\frac{3y^2}{4}=\frac{y\sqrt{3}}{2}\cdot\frac{y\sqrt{3}}{2}=(\frac{y\sqrt{3}}{2})^2$. Hence, $(x+\frac{y^2}{2})^2+\frac{3y^2}{4}=(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2$. Finally, we conclude that $x^2+xy+y^2=(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2$.
+
+\newpar
+If $x$ and $y$ are not both zero, it will hold true that $(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2>0$. Any quantity squared can not be less than zero by property 5 of the Order Properties of $\mathbb{R}$, and thus, the sum of two squared quantities can not be less than zero. Also, it would be impossible for $(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2=0$ when $x$ and $y$ are not both zero. For $(x+\frac{y^2}{2})^2$ to equal zero, both $x$ and $y$ would have to not equal zero, but then $(\frac{y\sqrt{3}}{2})^2$ would be a positive number, and therefore, $(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2$ would be greater than zero. For $(\frac{y\sqrt{3}}{2})^2$ to be zero, $y$ would have to equal zero. But then, $x$ would have to not equal zero and $(x+\frac{y^2}{2})^2$ would be greater than zero, and thus, $(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2$ would be greater than zero. Therefore, it must hold true that $(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2>0$. Since we have shown $(x+\frac{y^2}{2})^2+(\frac{y\sqrt{3}}{2})^2=x^2+xy+y^2$, we conclude $x^2+xy+y^2>0$ when $x,y\in\mathbb{R}$ and not both are zero, completing the proof.  
+
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 1, Problem 5
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+Let $A$ and $B$ be bounded nonempty subsets of $\mathbb{R}^+$. Define $AB :=\{ ab : a \in A, b \in B\}$. Prove that $\sup(AB)=\sup(A)\cdot \sup(B)$.
+\end{proposition}
+\begin{proof}
+We will assume $A$ and $B$ are both bounded nonempty subsets of $\mathbb{R}^+$ and that the set $AB$ contains $ab$ where $a\in A$ and $b\in B$. We will show that this means $\sup(AB)=\sup(A)\cdot \sup(B)$. 
+
+\newpar
+If $\sup A\cdot\sup B=0$, then $A=\{0\}$, $B=\{0\}$, or both $A$ and $B$ equal $\{0\}$. This is because for $\sup A\cdot\sup B=0$, at least one of the two quantities we are multiplying by need to equal zero. For $\sup A$ or $\sup B$ to be zero, $A$ or $B$ can only contain zero as they are subsets of the positive real numbers. If $A$ or $B$ only contain zero, then it follows that $\sup(AB)=0$. This is because if $A$ or $B$ are a set containing only zero, then the set $AB$ can only contain zero, as any number multiplied by zero equals zero. Thus, when $\sup A\cdot\sup B=0$ for $A$ and $B$ that are subsets of $\mathbb{R}^+$, it must be true that $\sup(AB)=0$. Hence, $\sup A\cdot\sup B=\sup(AB)$.
+
+\newpar
+Now we will assume $\sup A\cdot\sup B\neq0$. Then, it must be that $\sup A>0$ and $\sup B>0$ because both sets will contain real numbers greater than zero. By definition of supremum, for all $a\in A$ and $b\in B$, $a\le\sup A$ and $b\le\sup B$. The product of two greater or equal to quantities will be greater than or equal to the prodcut of two lesser or equal to quantities, and thus, $\sup A\cdot\sup B\ge ab$. Therefore, $\sup A\cdot\sup B$ is an upper bound of all $ab\in AB$ by the definition of an upper bound. By the definition of supremum, it follows that $\sup A\cdot\sup B\ge\sup(AB)$.
+
+\newpar
+We now must eliminate the possibility that $\sup A\cdot\sup B>\sup(AB)$. For contradiction, let's assume $\sup A\cdot\sup B>\sup(AB)$. Theorem R.3.2 says that for every $\epsilon>0$, there exists an $a\in A$ and $b\in B$ such that $a>\sup A-\epsilon$ and $b>\sup B-\epsilon$. The product of two greater quantities will be greater than the product of two lesser quantities, and thus, $ab>\sup A\cdot\sup B-\sup A\cdot\epsilon -\sup B\cdot\epsilon+\epsilon^2$. Factoring $\epsilon$ out of $-\sup A\cdot\epsilon -\sup B\cdot\epsilon$ results in $-(\sup A+\sup B)\epsilon$, and thus, $\sup A\cdot\sup B-\sup A\cdot\epsilon -\sup B\cdot\epsilon+\epsilon^2=\sup A\cdot\sup B-(\sup A+\sup B)\epsilon+\epsilon^2$. Let $\epsilon=(\sup A+\sup B)$. Then, $\sup A\cdot\sup B-(\sup A+\sup B)\epsilon+\epsilon^2=\sup A\cdot\sup B-(\sup A+\sup B)(\sup A+\sup B)+(\sup A+\sup B)^2$. We can multiply the terms within $\sup A\cdot\sup B-(\sup A+\sup B)(\sup A+\sup B)+(\sup A+\sup B)^2$ and we get $\sup A\cdot\sup B-(\sup A)^2-2\sup A\sup B-(\sup B)^2+(\sup A)^2+2\sup A\sup B+(\sup B)^2$. Combining like terms, the result is $\sup A\cdot\sup B$. Thus, $ab>\sup A\cdot\sup B$. By the definition of supremum, $\sup(AB)\ge ab$ for every $ab\in AB$. Thus, $\sup(AB)>\sup A\cdot\sup B$. This contradicts $\sup A\cdot\sup B>\sup(AB)$, and therefore, $\sup A\cdot\sup B\le\sup(AB)$. We have shown that when $\sup A\cdot\sup B\neq0$, $\sup A\cdot\sup B\le\sup(AB)$ and $\sup A\cdot\sup B\ge\sup(AB)$. Then, we conclude that $\sup A\cdot\sup B=\sup(AB)$.
+
+\newpar
+We have shown that when when $\sup A\cdot\sup B=0$, $\sup A\cdot\sup B=\sup(AB)$. We have also shown that when $\sup A\cdot\sup B\neq0$, and thus $\sup A>0$ and $\sup B>0$ because $A$ and $B$ are subsets of $\mathbb{R}^+$, $\sup A\cdot\sup B=\sup(AB)$. Therefore, when $A$ and $B$ are subsets of the positive real numbers, $\sup A\cdot\sup B=\sup(AB)$, completing the proof.
+\end{proof}
+
+\newpar
+\begin{proposition}
+ Let $A$ and $B$ be bounded nonempty subsets of $\mathbb{R}$. Define $AB :=\{ ab : a \in A, b \in B\}$. Then, it is not necessarily true that $\sup(AB)=\sup A\cdot \sup B$.
+\end{proposition}
+\begin{proof}
+\newpar 
+We will prove this by providing an example of bounded nonempty subsets  of $\mathbb{R}$, $A$ and $B$, such that $\sup(AB)\neq \sup A\cdot \sup B$. Let $A=[-1,0]$ and $B=[-1,0]$. From the definition of $A$, it is clear that 0 is an upper bound of $A$. Suppose $u$ is an upper bound of $A$ and $u<0$. Since $u$ is an upper bound of $A$ and $-1\in A$, we must have $-1\le u<0$. Note that $u<\frac{(0+u)}{2}<0$. It follows that $\frac{(0+u)}{2}\in A$, which is greater than $u$. Hence $u$ is not an upper bound. Thus, we must have $0\le u$ and $\sup A=0$. From the definition of $B$, it is clear that 0 is an upper bound of $B$. Suppose $v$ is an upper bound of $A$ and $v<0$. Since $v$ is an upper bound of $B$ and $-1\in B$, we must have $-1\le v<0$. Note that $v<\frac{(0+v)}{2}<0$. It follows that $\frac{(0+v)}{2}\in B$, which is greater than $v$. Hence $v$ is not an upper bound. Thus, we must have $0\le v$ and $\sup B=0$. Since $\sup B=0$ and $\sup A=0$, we conclude $\sup A\cdot \sup B=0$.  
+
+\newpar
+Since $-1\in A$ and $-1\in B$ we have that $1\in AB$. Thus, $\sup AB\ge1$ by the definition of supremum. If $\sup A\cdot\sup B=0$ and $\sup AB\ge1$, we can not have $\sup(AB)=\sup A\cdot\sup B$, completing the proof.
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 1, Problem 6
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+ If $S = \{\frac{n}{n+m}: n,m \in \mathbb{N}\}$, then $\inf{S}=0$ and $\sup{S}=0$.
+
+\end{proposition}
+\begin{proof}
+We will first show that 0 is a lower bound of S and 1 is an upper bound of S. Then we will shows they are the greatest lower bound and least upper bound, respectively. Then we can conclude they are the infimum and supremum, respectively.
+
+\newpar
+We must show that 0 is a lower bound of $S$. By definition of a natural number, $n>0$ and $m>0$ for all $n,m \in \mathbb{N}$. Hence it must hold true that $\frac{n}{n+m}>0$ as $n>0$ and $n+m>0$ for every $n,m\in\mathbb{N}$. Thus 0 is a lower bound for $S$. We must also show that 1 is an upper bound of $S$. By the definition of a natural number, $m\ge 1$. Thus, $n+m>n$ for $n,m \in \mathbb{N}$. Since $n$ and $m$ are both greater than zero, $n+m>0$. A positive number divided by a postive number is greater than zero, and thus, $\frac{1}{n+m}>0$. Property 3 of the Order Properties of $\mathbb{R}$, if we multiply by $\frac{1}{n+m}$ on both sides we get $1>\frac{n}{n+m}$. Thus, 1 is an upper bound for $S$.
+
+\newpar
+ Now let us suppose $u$ is a lower bound of $S$ and $u>0$. We can divide each side of $u>0$ by some $n\in\mathbb{N}$ and get $\frac{u}{n}>0$ because $n>0$ by the definition of a natural number. Also, because $n\ge1$ by the definition of a natural number, $\frac{u}{n}\le u$, making $\frac{u}{n}$ a lower bound by the definition of lower bound. Since $\frac{u}{n}>0$, by the Archimedean Property there exists $m\in\mathbb{N}$ such that $\frac{1}{m}<\frac{u}{n}$. For every $n,m\in\mathbb{N}$, $n$ and $m$ are greater than zero. Thus, we conclude $n+m>m$. If we are to take the reciprocal of this inequality we get $\frac{1}{n+m}<\frac{1}{m}$. Since $\frac{1}{m}<\frac{u}{n}$, it is true that $\frac{1}{m+n}<\frac{u}{n}$. We know that $n>0$ for every $n\in\mathbb{N}$, so if we multiply each side of $\frac{1}{m+n}<\frac{u}{n}$ by $n$, the result is $\frac{n}{m+n}<u$. This would contradict that $u$ is a lower bound, and therefore, $u\le0$. Since $u\le0$, it can be concluded that 0 is the greatest lower bound. We have shown 0 is a lower bound and is the greatest lower bound, hence $\inf{S}=0$.
+
+
+\newpar
+Now let us suppose $v$ is an upper bound of $S$ and $v<1$. Then, $0<1-v$. By the Archimedean Property, there exists $n\in\mathbb{N}$ such that $\frac{1}{n}<1-v$. When $m$ is a natural number, $m>0$ by definition. Therefore, $n+m>n$. Then, taking the reciprocal of the inequality, the result is $\frac{1}{(n+m)}<\frac{1}{n}$. Therefore, we conclude $\frac{1}{(n+m)}<1-v$. Since $m$ and $n$ are natural numbers and greater than zero, thus making $n+m>0$, we can multiply each side of the inequality by $(n+m)$ and the result is $1<(n+m)-v(n+m)$. If we are to subtract $(n+m)$ from each side and then multiply by -1, we get $(n+m)-1>v(n+m)$. The natural numbers $n$ and $m$ are greater than or equal to 1, hence $(n+m)-1>0$. Since $(n+m)-1>0$, Corollary R.3.1 tell us there exists $n\in\mathbb{N}$ such that $n>(n+m)-1$. Then, we conclude that $n>v(n+m)$. Now, dividing each side of the inequality by $(n+m)$ yields $\frac{n}{n+m}>v$. This would contradict that $v$ is an upper bound, and therefore, $v\ge1$. Since $v\ge1$, it can be concluded that 1 is the least upper bound. We have shown 1 is an upper bound and is the least upper bound, hence $\sup{S}=1$.
+
+\newpar
+We have proven $\inf{S}=0$ and $\sup{S}=1$, thus completing the proof.
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 1, Problem 7
+
+\noindent ironsj@mail.gvsu.edu
+
+\newpar
+ Before proving Proposition 6, it is necessary that we prove $n\le3^n$ for every $n\in\mathbb{N}$. To do so we will use mathematical induction to prove that $n\le3^n$ for every $n\in \mathbb{N}$. For our base case, $n=1$ yields inequality: $1\le3^1$. This can be simplified as $1\le3$. Thus, the assertion is true for $n=1$. Now for our inductive step, we will assume $n\le3^n$ for some $n\in\mathbb{N}$. We need to show that $(n+1)\le3^{n+1}$. Expanding $3^{n+1}$, we conclude that $3^{n+1}$ is equal to $3^n\cdot3$. The definition of multiplication reveals that $3^n\cdot3$ is equal to $3^n+3^n+3^n$. We have shown $3^{n+1}=3^n+3^n+3^n$. Now, since we have assumed $n\le3^n$ for some $n\in\mathbb{N}$, and if we add 1 to each side of the inequality, the result is $n+1\le3^n+1$ by property 1 of the Order Properties of $\mathbb{R}$. For every $n\in\mathbb{N}$, $n\ge1$, and therefore, $3^n>1$. Thus, $n+1\le3^n+1<3^n+3^n+3^n$. We have shown $3^{n+1}=3^n+3^n+3^n$, so we conclude $n+1<3^{n+1}$. Therefore, by the principle of mathematical induction, it follows that $n\le3^n$ for all $n\in\mathbb{N}$.
+
+\newpar
+\begin{proposition}
+If $x, y \in \mathbb{R}$ and $x < y$, then prove that there exists $n \in \mathbb{N}$ and $m \in \mathbb{Z}$ such that $x <\frac{m}{3^n}<y$.
+
+\end{proposition}
+\begin{proof}
+We will assume $x<y$ and show there exists $n \in \mathbb{N}$ and $m \in \mathbb{Z}$ such that $x <\frac{m}{3^n}<y$. Since $y>x$, if we subtract $x$ from both sides we get $y-x>0$. The Archimedean Property then allows us to say that there exists $n\in \mathbb{N}$ such that $\frac{1}{n}<y-x$.
+
+\newpar
+We now must show that this means there exists $n\in \mathbb{N}$ such that $\frac{1}{3^n}<y-x$.
+We have shown $n\le3^n$ for all $n\in\mathbb{N}$. Now if we take the reciprocal, this gives us $\frac{1}{n}\ge\frac{1}{3^n}$. Therefore, since we know $\frac{1}{n}<y-x$, then it must hold true that there exists $n\in \mathbb{N}$ such that $\frac{1}{3^n}<y-x$. Thus, by multiplying each side of the inequality by $3^n$ and then adding $x\cdot3^n$ to each side, we get $x\cdot3^n+1<y\cdot3^n$. By Theorem R.3.4 there exists $m\in \mathbb{Z}$ with $m-1\le x\cdot3^n<m$. Therefore, $m\le x\cdot3^n+1<y\cdot3^n$. This means $x\cdot3^n<m<y\cdot3^n$. Thus, $x<\frac{m}{3^n}<y$. We have shown there exists $n\in \mathbb{N}$ and $m\in \mathbb{Z}$ such that $x<\frac{m}{3^n}<y$, completing the proof.
+\end{proof}
+
+
+
+\end{document}

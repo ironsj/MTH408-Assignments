@@ -1,0 +1,201 @@
+\documentclass[11 pt]{article}
+\title{Problem Set 2}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{proposition}{Proposition}
+
+\newcommand{\newpar}{\vspace{.15in}\noindent}
+
+\begin{document}
+
+\noindent Jake Irons, MTH 408-01, Problem Set 2, Problem 1
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+Suppose $\lim(x_n)=1$. Then there exists $n_o\in\mathbb{N}$ such that $\mid x_n\mid>0.99$
+for all $n \ge n_o$.
+\end{proposition}
+\begin{proof}
+Assume $\lim(x_n)=1$. Let $\epsilon=.01$. Since $\lim(x_n)=1$, there exists an $n_o\in\mathbb{N}$ such
+that $\mid x_n-1\mid<\epsilon$ for all $n\ge n_o$. Therefore, $-\epsilon<x_n-1<\epsilon$. Adding one to each part of the inequality results in $1-\epsilon<x_n<1+\epsilon$ for all $n\ge n_o$. It follows that $0.99 < x_n < 2.01$ for all $n\ge n_o$. Consequently, $x_n>0.99$ for all $n\ge n_0$. Hence $\mid x_n\mid>0.99$ for all $n\ge n_o$.
+\end{proof}
+
+\newpar
+\begin{proposition}
+If $(a_n)$ converges to a non-zero real number and $(a_nb_n)$ is convergent, then $(b_n)$ is convergent.
+\end{proposition}
+\begin{proof}
+\newpar 
+We will assume $(a_n)$ converges to a non-zero real number and $(a_nb_n)$ is convergent and show that $(b_n)$ is convergent. 
+
+\newpar
+Since $a_n$ converges to a non-zero real number we will let $\lim(a_n)=L_1$ where $L_1\ne0$. Since $(a_nb_n)$ is convergent we will let $\lim(a_nb_n)=L_2$. We want to show $\lim(y_n)=\frac{L_2}{L_1}$, and then we will be able to say $y_n$ is convergent. Since $x_n\rightarrow L_1$, if we take the inverse of the sequence the result is, $\frac{1}{x_n}\rightarrow \frac{1}{L_1}$. By Theorem S.2.2, $\lim(\frac{1}{x_n}\cdot x_ny_n)=\frac{L_2}{L_1}$. When we multiply together $\frac{1}{x_n}$ and $x_ny_n$, the result is $y_n$. Thus, $\lim(\frac{1}{x_n}\cdot x_ny_n)=\lim(y_n)=\frac{L_2}{L_1}$. Since $y_n$ has a limit, it must be convergent, completing the proof. 
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 2, Problem 2
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+Let $x_1=a$, $a>2$, and $x_n=4(1-\frac{1}{x_{n-1}})$. Then the limit of $x_n$ necessarily exists. Find the limit of $x_n$.
+\end{proposition}
+\begin{proof}
+We will assume $x_1=a$, $a>2$, and $x_n=4(1-\frac{1}{x_{n-1}})$. We will show that the limit of $x_n$ exists by first showing that the sequence is decreasing, and then showing the sequence is bounded. Then, we will be able to determine that the limit of $x_n$ exists.
+
+\newpar
+We will first show that $x_n$ is decreasing. We will do this by showing $x_n-<x_{n-1}$. Since $x_n=4(1-\frac{1}{x_{n-1}})$, we can say that $x_n-x_{n-1}=4(1-\frac{1}{x_{n-1}})-x_{n-1}$. If we are to distribute the 4, the result is $4-\frac{4}{x_{n-1}}-x_{n-1}$. If we are to add together all terms we get $\frac{4x_{n-1}-4-(x_{n-1})^2}{x_{n-1}}$. If we factor out a negative one out of the top of the fraction we get $-\frac{(x_{n-1})^2-4x_{n-1}+4}{x_{n-1}}$, and then if we factor the top of the fraction we get $-\frac{(x_{n-1}-2)^2}{x_{n-1}}$. Since the top part of the fraction is squared, it will be a positive number. $x_{n-1}$ is also positive so when the fraction is multiplied by negative the result will be negative and thus, $-\frac{(x_{n-1}-2)^2}{x_{n-1}}<0$. Therefore, $x_n-x_{n-1}<0$, and adding $x_{n-1}$ to each side, we find that $x_n<x_{n-1}$. Hence, $x_n$ is decreasing.
+
+\newpar
+We will now show that $x_n$ is bounded. We see that from the definition of $x_n$, $x_n<4$. We now must show that $x_n$ has a lower bound. Let us say that $\lim(x_n)$ exists. We say the limit of $x_n$ is $x$. If $\lim(x_n)=x$, then $\lim(x_{n-1})=x$. Since $x_n=4(1-\frac{1}{x_{n-1}})$, $\lim(x_n)=\lim(4(1-\frac{1}{x_{n-1}}))$. Therefore, $\lim(x_n)= 4(1-\lim(\frac{1}{x_{n-1}}))$. Since the limit of both $x_n$ and $x_{n-1}$ is $x$, then we say $x= 4(1-(\frac{1}{x}))$. If we distribute the 4 and combine terms the results is $x=\frac{4x-4}{x}$. If we multiply each side by $x$ and then move all terms to one side we get $x^2-4x+4=0$. Factoring this, the result is $(x-2)^2=0$. Therefore, $x=2$. Thus the limit is 2 and finally, $2<x_n<4$. Hence, $x_n$ is bounded. Since $x_n$ is decreasing and bounded, by the Monotone Convergence Theorem, $x_n$ is convergent. Since $x_n$ is convergent, by definition S.1.2, $x_n$ has a limit, completing the proof. 
+
+
+
+\end{proof}
+
+\newpar
+\begin{proposition}
+Let $x_1=a$, $a>2$, and $x_n=4(1-\frac{1}{x_{n-1}})$. Then $\lim(x_n)=2$.
+\end{proposition}
+\begin{proof}
+\newpar 
+We assume $x_1=a$, $a>2$, and $x_n=4(1-\frac{1}{x_{n-1}})$, and also that the limit of $x_n$ exists, as it was proven above. Let us say that $\lim(x_n)$ exists. We say the limit of $x_n$ is $x$. If $\lim(x_n)=x$, then $\lim(x_{n-1})=x$. Since $x_n=4(1-\frac{1}{x_{n-1}})$, $\lim(x_n)=\lim(4(1-\frac{1}{x_{n-1}}))$. Therefore, $\lim(x_n)= 4(1-\lim(\frac{1}{x_{n-1}}))$. Since the limit of both $x_n$ and $x_{n-1}$ is $x$, then we say $x= 4(1-(\frac{1}{x}))$. If we distribute the 4 and combine terms the results is $x=\frac{4x-4}{x}$. If we multiply each side by $x$ and then move all terms to one side we get $x^2-4x+4=0$. Factoring this, the result is $(x-2)^2=0$. Therefore, $x=2$. Thus the $\lim(x_n)=2$.
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 2, Problem 4
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+Evaluate $\lim(\frac{2^n+3^n}{2^{n+1}+3^{n+1}})$.
+\end{proposition}
+\begin{proof}
+We know $\lim(\frac{2^n+3^n}{2^{n+1}+3^{n+1}})=\lim(\frac{2^n+3^n}{2^{n+1}+3^{n+1}}\cdot \frac{\frac{1}{3^{n+1}}}{\frac{1}{3^{n+1}}})$, since this would be the same as multiplying by one. The result of this is $\lim(\frac{\frac{2^n}{3^{n+1}}+\frac{1}{3}}{(\frac{2}{3})^{n+1}+1})$.
+
+\newpar
+We will first find the limit of the top part of the fraction, or $\lim(\frac{2^n}{3^{n+1}}+\frac{1}{3})$. The $\lim(\frac{1}{3})=\frac{1}{3}$. Now we have to find $\lim(\frac{2^n}{3^{n+1}})$. Pulling a 3 out of $3^{n+1}$, we find that $\lim(\frac{2^n}{3^{n+1}})=\lim(\frac{2^n}{3^n\cdot3})$. This would be the same as saying $\frac{1}{3}(\lim(\frac{2}{3})^n)$. Since $\frac{1}{3}\lim((\frac{2}{3})^n)=0$, $\lim(\frac{2^n}{3^{n+1}})=0$. Therefore, $\lim(\frac{2^n}{3^{n+1}}+\frac{1}{3})=\frac{1}{3}$.
+
+\newpar
+Now we must find the limit of the denominator, or $\lim((\frac{2}{3})^{n+1}+1)$. We know $\lim(1)=1$, so now we must find $\lim((\frac{2}{3})^{n+1})$. Pulling out a $\frac{2}{3}$, we see $\lim((\frac{2}{3})^{n+1})=\lim((\frac{2}{3})^n)\cdot\lim(\frac{2}{3})$. This would be equal to $0\cdot\frac{2}{3}$, which ultimately results in 0. Thus, $\lim((\frac{2}{3})^{n+1}+1)=1$. 
+
+\newpar
+Since the limit of the top part of $\frac{\frac{2^n}{3^{n+1}}+\frac{1}{3}}{(\frac{2}{3})^{n+1}+1}$ is $\frac{1}{3}$ and the limit of the bottom part is 1, $\lim(\frac{\frac{2^n}{3^{n+1}}+\frac{1}{3}}{(\frac{2}{3})^{n+1}+1})=\frac{1}{3}$. Therefore, since  $\lim(\frac{2^n+3^n}{2^{n+1}+3^{n+1}})=\lim(\frac{\frac{2^n}{3^{n+1}}+\frac{1}{3}}{(\frac{2}{3})^{n+1}+1})$, $\lim(\frac{2^n+3^n}{2^{n+1}+3^{n+1}})=\frac{1}{3}$.
+
+
+
+\end{proof}
+
+\newpar
+\begin{proposition}
+Evaluate $\lim(\frac{1}{2^{n\sin(\frac{n\pi}{2}}})$.
+\end{proposition}
+\begin{proof}
+\newpar 
+We will show that the limit of $\frac{1}{2^{n\sin(\frac{n\pi}{2}}}$ does not exist by showing that the sequence diverges. To do so we will show the sequence has two convergent subsequences whose limits are not equal. Then, by Theorem S.5.3, the sequence will be divergent. We will let $x_n=\frac{1}{2^{n\sin(\frac{n\pi}{2}}}$.
+
+\newpar
+We will first evaluate $\lim(x_{2n})$ which is equal to $\lim(\frac{1}{2^{2n\sin(n\pi)}})$. As $n$ approaches infinity, $\lim(\sin(n\pi))=0$. Thus, $\lim(\frac{1}{2^{2n\sin(n\pi)}})=\frac{1}{2^0}=1$. Therefore, $\lim(x_{2n})=1$.
+
+\newpar
+Now we will evaluate $\lim(x_{4n+1})$ which is equal to $\lim(\frac{1}{2^{(4n+1)\sin(\frac{(4n+1)\pi}{2})}})$. If we distribute $4n+1$, we get $\lim(\frac{1}{2^{(4n+1)\sin(\frac{4n\pi+\pi}{2})}})$, which then we can simplify as $\lim(\frac{1}{2^{(4n+1)\sin(2n\pi+\frac{\pi}{2})}})$. As $n$ approaches infinity, $\lim(\sin(2n\pi+\frac{\pi}{2}))=1$. Thus, we are left with $\lim(\frac{1}{2^{4n+1}})$. If we are to pull a 2 out of $2^{4n+1}$, the result is $(\frac{1}{2})^{4n}\cdot\frac{1}{2}$. The limit of $(\frac{1}{2})^{4n}$ is 0 and the limit of $\frac{1}{2}$ is $\frac{1}{2}$, and therefore, $\lim((\frac{1}{2})^{4n}\cdot\frac{1}{2})=0$. Therefore, $\lim(x_{4n+1})=0$.
+
+\newpar
+We have shown there are two subsequences of $x_n$ that converge to different limits. Thus, by Theorem S.5.3, $x_n$ diverges. Therefore, $\lim(\frac{1}{2^{n\sin(\frac{n\pi}{2}}})$ does not exist.
+\end{proof}
+
+\newpar
+\begin{proposition}
+Evaluate $\lim(na^n)$ where $0<a<1$.
+\end{proposition}
+\begin{proof}
+\newpar 
+We will use the ratio test to show that $\lim(na^n)=0$ where $0<a<1$. We will let $x_n=na^n$. To ensure $x_n>0$ for all $n\in\mathbb{N}$, we will say $\mid\frac{x_{n+1}}{x_n}\mid=\mid\frac{(n+1)a^{n+1}}{na^n}\mid$. If we are to pull $\frac{n+1}{n}$ out of $\mid\frac{(n+1)a^{n+1}}{na^n}\mid$, the result is $\mid\frac{(n+1)}{n}\cdot\frac{a^{n+1}}{a^n}\mid$. Simplifying $\frac{a^{n+1}}{a^n}$, we get $\mid\frac{(n+1)}{n}\cdot a\mid$. Using Theorem R.2.1 and the fact that all natural numbers are positive, we get $\mid\frac{(n+1)}{n}\cdot a\mid=\mid a\mid\frac{n+1}{n}$. As $n$ approaches infinity, $\mid a\mid\frac{n+1}{n}$ approaches $\mid a\mid$. Thus, $\lim(\mid\frac{x_{n+1}}{x_n}\mid)=\mid a\mid$. Therefore, $\lim(\frac{x_{n+1}}{x_n})=\mid a \mid$. Since, $0<a<1$, $\lim(\frac{x_{n+1}}{x_n})<1$, and thus, by the ratio test $\lim(x_n)=0$. Therefore, $\lim(na^n)=0$. 
+\end{proof}
+
+\newpar
+\begin{proposition}
+Evaluate $\lim(b^n(-1)^n\sin(\frac{n\pi}{2}))$ where $0<b<1$.
+\end{proposition}
+\begin{proof}
+\newpar 
+We will start by taking the absolute value of our sequence, $\mid b^n(-1)^n\sin(\frac{n\pi}{2})\mid$. Using Theorem R.2.1, we have $\mid(b^n(-1)^n\mid\mid\sin(\frac{n\pi}{2})\mid$. The absolute value of $(-1)^n$ will always equal one and $b$ will always be positive by definition, so we can say $\mid(b^n(-1)^n\mid\mid\sin(\frac{n\pi}{2})\mid=b^n\mid\sin(\frac{n\pi}{2})\mid$. For all $n\in\mathbb{N}, \sin(\frac{n\pi}{2})$ will equal 0 or 1. Thus, $b^n\mid\sin(\frac{n\pi}{2})\mid\le b^n$ for all $n\in\mathbb{N}$. Therefore, we may say $-b^n\le b^n(-1)^n\sin(\frac{n\pi}{2})\le b^n$. Since $0<b<1$, the limit of $-b^n$ and $b^n$ is 0. Thus by the Squeeze Theorem, $\lim(b^n(-1)^n\sin(\frac{n\pi}{2}))=0$.
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 2, Problem 5
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+ If $(x_n)$ is a positive sequence that converges to 0 and $(y_n)$ is a divergent bounded sequence, then $(x_ny_n)$ must be convergent.
+\end{proposition}
+\begin{proof}
+We will assume $x_n$ is a positive sequence that converges to 0 and $y_n$ is a divergent bounded sequence. We will show that this means that $(x_ny_n)$ must be convergent. 
+
+\newpar
+Since $y_n$ is bounded, there exists $M\in\mathbb{R}^+$ such that $\mid y_n\mid\le M$ for all $n\in\mathbb{N}$. Since $x_n$ converges to 0, by definition S.1.2 for every $\epsilon>0$, there exists a natural number $n_o$ such that for all $n\ge n_o$, the terms $x_n$ satisfy $\mid x_n\mid<\epsilon$. In this case we will let $\mid x_n\mid<\frac{\epsilon}{M}$. 
+
+\newpar
+If we have $\mid x_ny_n\mid$, using Theorem R.2.1, we can say $\mid x_ny_n\mid=\mid x_n\mid\mid y_n\mid$. Since $\mid y_n\mid\le M$, we can say $\mid x_n\mid\mid y_n\mid\le\mid x_n\mid M$. Since $\mid x_n\mid<\frac{\epsilon}{M}$ , we can say $\mid x_n\mid M<\frac{\epsilon}{M}M$, which is equal to $\epsilon$. Therefore, $\mid x_ny_n\mid<\epsilon$.
+
+\newpar
+Since $\mid x_ny_n\mid<\epsilon$, by definition S.1.2, $\lim(\mid x_ny_n\mid)=0$, meaning $\lim(x_ny_n)=0$. Therefore, since $x_ny_n$ has a limit, it is convergent, completing the proof. 
+
+
+\end{proof}
+
+\newpar
+\begin{proposition}
+Let $a>0$. If $x_n>a$ for all $n\in\mathbb{N}$, then the sequence $(y_n)$ defined by $y_n=e^\frac{1}{x_n}$ must have a convergent subsequence.
+\end{proposition}
+\begin{proof}
+\newpar 
+We will assume $a>0$ and $x_n>a$ for all $n\in\mathbb{N}$. We will then show that this means $y_n=e^\frac{1}{x_n}$ must have a convergent subsequence.
+
+\newpar
+To solve this proof we must first state the two cases that are presented. The first is that $x_n$ is unbounded. The second case is that $x_n$ is bounded. We will start with the first case. If $x_n$ is unbounded, then there exists a subsequence ${x_{nk}}$ of ${x_n}$ such that ${a_{nk}}\rightarrow \infty$ as $n$ approaches infinity. Since $x_n>a$ and $a>0$, it will follow that $x_{nk}>0$ for all $n_k\in\mathbb{N}$, and therefore we can take the inverse of the subsequence. When we take the inverse of the subsequence, which would be $\frac{1}{a_{nk}}, \lim(\frac{1}{a_{nk}})=0$. Therefore, for the subsequence of $y_n, e^\frac{1}{x_{nk}}$, $\lim(e^\frac{1}{x_{nk}})=e^0=1$. Therefore, since the subsequence converges to 1, $y_n$ has a convergent subsequence when $x_n$ is unbounded.
+
+\newpar
+Now we must consider when $x_n$ is bounded. If $x_n$ is bounded, then $x_n$ has a limit. We will let $\lim(x_n)=L$. By Theorem S.5.1, every subsequence $x_{nk}$ of $x_n$ also converges to $L$. Since $x_n>a$ and $a>0$, it will follow that $x_{nk}>0$ for all $n_k\in\mathbb{N}$, and therefore we can take the inverse of the subsequence. When we take the inverse of the subsequence, which would be $\frac{1}{a_{nk}}, \lim(\frac{1}{a_{nk}})=\frac{1}{L}$.Therefore, for the subsequence of $y_n, e^\frac{1}{x_{nk}}$, $\lim(e^\frac{1}{x_{nk}})=e^\frac{1}{L}$. Therefore, since the subsequence converges to $e^\frac{1}{L}$, $y_n$ has a convergent subsequence when $x_n$ is bounded.
+
+\newpar
+We have shown that $y_n$ has a convergent subsequence for all possible cases, thus completing the proof.
+
+
+\end{proof}
+\newpage
+\noindent Jake Irons, MTH 408-01, Problem Set 2, Problem 6
+
+\noindent ironsj@mail.gvsu.edu
+\newpar
+\begin{proposition}
+If $(x_n)$ and $(y_n)$ are Cauchy sequences then $(x_n+y_n)$ is Cauchy.
+
+\end{proposition}
+\begin{proof}
+We will assume $(x_n)$ and $(y_n)$ are Cauchy sequences and show that this means $(x_n+y_n)$ is Cauchy. Let $\epsilon>0$. By definition S.7.1, there is $\mid x_n-x_m\mid<\frac{\epsilon}{2}$ for all $n,m\ge P_1$. Also by definition S.7.1, there is $\mid y_n-y_m\mid<\frac{\epsilon}{2}$ for all $n,m\ge P_2$. Then if $m,n\ge P$ where $P=max\{P_1,P_2\}$, using the triangle inequality we can say $\mid(x_n+y_n)-(x_m+y_m)\mid=\mid(x_n-x_m)+(y_n-y_m)\mid\le\mid x_n-x_m\mid+\mid y_n-y_m\mid$. Since $\mid x_n-x_m\mid<\frac{\epsilon}{2}$ and $\mid y_n-y_m\mid<\frac{\epsilon}{2}$, we can say $\mid x_n-x_m\mid+\mid y_n-y_m\mid<\frac{\epsilon}{2}+\frac{\epsilon}{2}$ for all $n,m\in P$. This can be simplified to $\mid x_n-x_m\mid+\mid y_n-y_m\mid<\epsilon$.Therefore, by definition S.7.1, $x_n+y_n$ would be Cauchy, completing the proof.
+
+
+
+\end{proof}
+
+\newpar
+\begin{proposition}
+If $(x_n)$ is a sequence with the property that $\lim(\mid x_{n+1}-x_n\mid)=0$ then $(x_n)$ is not necessarily a Cauchy
+sequence.
+
+\end{proposition}
+\begin{proof}
+\newpar 
+We will assume $(x_n)$ is a sequence with the property that $\lim(\mid x_{n+1}-x_n\mid)=0$ and show that $(x_n)$ is not necessarily a Cauchy sequence.
+
+\newpar
+We will prove this by providing an example of a sequence $x_n$ that satisfies $\lim(\mid x_{n+1}-x_n\mid)=0$, but is not a Cauchy sequence. Let $x_n=\sqrt{n}$. Therefore we have $\mid x_{n+1}-x_n\mid=\mid\sqrt{n+1}-\sqrt{n}\mid$. If we multiply $\mid\sqrt{n+1}+\sqrt{n}\mid$ by $\mid\frac{\sqrt{n+1}+\sqrt{n}}{\sqrt{n+1}+\sqrt{n}}\mid$, the result is $\mid\frac{1}{\sqrt{n+1}+\sqrt{n}}\mid$. The natural numbers are always positive so we can say $\mid\frac{1}{\sqrt{n+1}+\sqrt{n}}\mid=\frac{1}{\sqrt{n+1}+\sqrt{n}}$. The limit of both $\sqrt{n+1}$ and $\sqrt{n}$ are infinity, so $\lim(\sqrt{n+1}+\sqrt{n})=\infty$. Therefore, $\lim(\frac{1}{\sqrt{n+1}+\sqrt{n}})=0$. Thus, when $x_n=\sqrt{n}$, the property $\lim(\mid x_{n+1}-x_n\mid)=0$ is satisfied. However, $\sqrt{n}$ is unbounded. We know this because if we let $M>0$ be given, there exists $n_o\in\mathbb{N}$ where $n_o\ge M^2$. If we take the square root of both sides of the inequality the result is $\sqrt{n_o}\ge M$. Therefore, $x_n$ is unbounded. By Theorem S.7.2, $x_n=\sqrt{n}$ could not be a Cauchy sequence. Therefore, we have shown a sequence satisfying the property does not necessarily need to be Cauchy, completing the proof.
+\end{proof}
+
+
+
+
+\end{document}
